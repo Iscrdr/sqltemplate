@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: jdbc-test
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.132.150:3306/bzz?serverTimezone=GMT%2B8&characterEncoding=utf8&useUnicode=true&useSSL=false&pinGlobalTxToPhysicalConnection=true&autoReconnect=true&failOverReadOnly=false
+      username: root
+      password: root
+      maximum-pool-size: 20
+      pool-name: HikariMysqlPool
+      connection-timeout: 30000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      #connection-test-query: SELECT 1
+      connection-test-query: SELECT 'HELLO' FROM DUAL
+      minimum-idle: 1
+      maximum-pool-pize: 10
+      initialization-fail-timeout: 1
+      validation-timeout: 5000
+logging:
+  level:
+    org.springframework.data: TRACE
+    org.springframework.jdbc: TRACE
+    com.bzz.cloud: DEBUG

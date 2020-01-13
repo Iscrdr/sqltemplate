@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!--
+
+        -->
+        <!ELEMENT sqlTemplate (sql* | insert* | update* | delete* | select* )+>
+        <!ATTLIST sqlTemplate namespace CDATA #IMPLIED >
+        <!ELEMENT property EMPTY>
+        <!ATTLIST property name CDATA #REQUIRED value CDATA #REQUIRED >
+        <!ELEMENT select (#PCDATA | include)* >
+        <!ATTLIST select id CDATA #REQUIRED databaseId CDATA #IMPLIED >
+        <!ELEMENT update (#PCDATA | include)* >
+        <!ATTLIST update id CDATA #REQUIRED databaseId CDATA #IMPLIED >
+        <!ELEMENT insert (#PCDATA | include)* >
+        <!ATTLIST insert id CDATA #REQUIRED databaseId CDATA #IMPLIED >
+        <!ELEMENT delete (#PCDATA | include)* >
+        <!ATTLIST delete id CDATA #REQUIRED databaseId CDATA #IMPLIED >
+        <!ELEMENT sql (#PCDATA | include )*>
+        <!ATTLIST sql id CDATA #REQUIRED databaseId CDATA #IMPLIED>
+        <!ELEMENT include (property+)?>
+        <!ATTLIST include refid CDATA #REQUIRED >
+
+
+

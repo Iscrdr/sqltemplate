@@ -26,7 +26,6 @@ public class JdbcApp implements CommandLineRunner {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-
     @Override
     public void run(String... args) throws Exception {
         List<Map<String, Object>> maps = jdbcTemplate.queryForList(
